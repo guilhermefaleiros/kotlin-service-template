@@ -1,0 +1,17 @@
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
+
+server:
+  port: 8080
+
+jdbc:
+  username: ${DATABASE_USER}
+  password: ${DATABASE_PASSWORD}
+  initSql: 'SELECT 1'
+  url: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
+  schema: ${DATABASE_SCHEMA}
+  maxPoolSize: 5
+  maxLifetimeInMinutes: 10
+  leakDetectionThresholdInMilliseconds: 2000
+  connectionTimeoutInMilliseconds: 1000

@@ -1,0 +1,7 @@
+CREATE SCHEMA IF NOT EXISTS database;
+
+CREATE TABLE database.users (
+   id UUID PRIMARY KEY,
+   name VARCHAR(255) NOT NULL,
+   email VARCHAR(255) NOT NULL UNIQUE
+);
