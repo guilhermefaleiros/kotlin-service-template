@@ -5,6 +5,23 @@ spring:
 server:
   port: 8080
 
+management:
+  server:
+    port: 8081
+    base-path: /
+  endpoint:
+    health:
+      enabled: true
+      probes:
+        enabled: true
+      show-details: always
+      show-components: always
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: health,prometheus,metrics
+
 springdoc:
   api-docs:
     path: /v3/api-docs

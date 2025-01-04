@@ -13,11 +13,14 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":application"))
 
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.postgresql:postgresql:$postgresqlVersion")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocVersion")
+
+    runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 
     testImplementation("com.github.javafaker:javafaker:1.0.2") {
         exclude(group = "org.yaml", module = "snakeyaml")
