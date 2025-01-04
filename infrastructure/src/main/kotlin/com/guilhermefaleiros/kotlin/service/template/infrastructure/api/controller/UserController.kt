@@ -21,7 +21,7 @@ class UserController(
     private val retrieveUsersUseCase: RetrieveUsersUseCase,
     private val deleteUserByIdUseCase: DeleteUserUseCase,
 ) : UserAPI {
-    override fun create(request: CreateUserRequest): ResponseEntity<Any> {
+    override fun create(request: CreateUserRequest): ResponseEntity<*> {
         val output = createUserUseCase.execute(request.toInput())
 
         return output.fold(
